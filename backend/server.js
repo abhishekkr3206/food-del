@@ -15,7 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 // db connection
-connectDB();
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
 
 // api endpoints
 app.use("/api/user", userRouter);
