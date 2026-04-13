@@ -1,5 +1,9 @@
 {
   "version": 2,
+  "env": {
+    "MONGO_URI": "mongodb+srv://abhikumar:abhi3206@cluster0.fs8f5yk.mongodb.net/food-del?retryWrites=true&w=majority&appName=Cluster0",
+    "JWT_SECRET": "supersecretfooddelkey123"
+  },
   "builds": [
     {
       "src": "server.js",
