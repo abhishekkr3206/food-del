@@ -27,6 +27,11 @@ app.get('/', (req, res) => {
     res.send('API Working');
 });
 
-app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`);
-});
+// Vercel serverless function export
+export default app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(port, () => {
+        console.log(`Server Started on http://localhost:${port}`);
+    });
+}
